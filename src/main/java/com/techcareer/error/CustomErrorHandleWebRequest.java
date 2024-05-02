@@ -1,6 +1,7 @@
 package com.techcareer.error;
 
 
+import com.techcareer.utils.FrontendPortUrl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
