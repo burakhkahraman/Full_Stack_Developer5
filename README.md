@@ -2,7 +2,7 @@
 ![](https://komarev.com/ghpvc/?username=burakhkahraman)
 ## _N-Tier Architecture_
 
-[![N|GitHub](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/200px-GitHub_Invertocat_Logo.svg.png)](https://github.com/hamitmizrak/FullStackDeveloper12.git)
+[![N|GitHub](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/200px-GitHub_Invertocat_Logo.svg.png)](https://github.com/burakhkahraman/TechCareer_FullStack13.git)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/burakhkahraman/Full_Stack_Developer5.git)
 ![README PNG](./image/readme.png)
@@ -145,15 +145,11 @@ npm run nodemon_q
 
 
 ---
-Support
-As [Hamit Mızrak] writes on the [Markdown site][hm]
 
-> Who am I:
-> Computer Engineering  
-> Senior Full Stack Developer & DEVOPS & MOBIL APP
 
-[Mail Addres ](hamitmizrak@gmail.com)
-[Tel](hamitmizrak@gmail.com)
+[Mail Addres ](burakhasankahraman@gmail.com)
+
+
 
 ---
 ## Road Map
@@ -287,7 +283,7 @@ docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger
 [FRONTEND]: <https://github.com/denemed>
 [BACKEND]: <https://github.com/denemed>
 
-[hm]: <https://github.com/hamitmizrak>
+[hm]: <https://github.com/burakhkahraman>
 [markdown-it]: <https://github.com/markdown-it/markdown-it>
 [Ace Editor]: <http://ace.ajax.org>
 [node.js]: <http://nodejs.org>
