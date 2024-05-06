@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Lombok
@@ -28,7 +29,6 @@ public class RoleServicesImpl implements IRoleService<RoleDto, RoleEntity> {
     @Autowired
     private IRoleRepository iRoleRepository;
     */
-
 
     // Injection IRoleRepository (2.YOL => Constructor Injection)
     /*
@@ -79,7 +79,18 @@ public class RoleServicesImpl implements IRoleService<RoleDto, RoleEntity> {
     // List
     @Override
     public List<RoleDto> roleServiceList(RoleDto roleDto) {
-        return null;
+        //Entity List
+        List<RoleEntity> roleEntityList1=iRoleRepository.findAll();
+
+        // Dto List
+        List<RoleDto> roleDtoList=new ArrayList<>();
+
+        // Entity To Dto List
+        for(RoleEntity tempEntity:roleEntityList1){
+            RoleDto roleDto1=entityToDto(tempEntity);
+            roleDtoList.add(roleDto1);
+        }
+        return roleDtoList;
     }
 
     // Find
