@@ -1,7 +1,8 @@
 package com.techcareer.error;
 
 
-import com.techcareer.utils.FrontendPortUrl;
+
+import com.techcareer.utils.ProjectUrl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
@@ -27,7 +28,7 @@ import java.util.Map;
 
 // Spring Boot defaulttan gelen error'ı kendimize göre customise yapıyoruz.
 @RestController
-@CrossOrigin(origins = FrontendPortUrl.REACT_FRONTEND_PORT_URL) //localhost:3000 portunu backendde kullanabiliriz.
+@CrossOrigin(origins = ProjectUrl.REACT_FRONTEND_PORT_URL) //localhost:3000 portunu backendde kullanabiliriz.
 public class CustomErrorHandleWebRequest implements ErrorController {
 
     // 1.YOL (Field Injection)
