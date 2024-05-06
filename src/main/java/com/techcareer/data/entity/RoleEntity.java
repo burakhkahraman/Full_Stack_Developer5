@@ -46,5 +46,4 @@ public class RoleEntity  implements Serializable {
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date systemCreatedDate;
-
 } //end class RoleEntity
