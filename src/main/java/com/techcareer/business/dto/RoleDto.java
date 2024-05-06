@@ -25,7 +25,6 @@ public class RoleDto implements Serializable {
     // SERILESTIRME
     public static final Long serialVersionUID=1L;
 
-
     // Role ID
     private Long roleId;
 
@@ -36,7 +35,6 @@ public class RoleDto implements Serializable {
     // Annotation kullanmalısın cunku database aynı role adında olmaması gerekiyor (unique)
     @AnnotationUniqueRoleName
     private String roleName= ERole.USER.toString();
-
 
     // System Created Date
     private Date systemCreatedDate;
