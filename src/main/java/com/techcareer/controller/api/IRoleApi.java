@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
+// API INTERFACE (IRoleApi)
+// D: Dto
 public interface IRoleApi<D> {
 
     // ROLE CRUD

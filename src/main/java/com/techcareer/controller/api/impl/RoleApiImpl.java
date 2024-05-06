@@ -61,6 +61,7 @@ public class RoleApiImpl implements IRoleApi<RoleDto> {
                     .build();
             return ResponseEntity.status(400).body(apiResultCreate);
         }
+        log.info("Role Api eklendi");
         return ResponseEntity.status(201).body(iRoleService.roleServiceCreate(roleDtoData));
     }
 
@@ -69,10 +70,11 @@ public class RoleApiImpl implements IRoleApi<RoleDto> {
     @GetMapping("/list")
     @Override
     public ResponseEntity<List<RoleDto>> roleServiceList() {
+        log.info("Role Api Listelendi");
         return ResponseEntity.ok(iRoleService.roleServiceList());
     }
 
-    //FIND Role(Api)
+    // FIND Role(Api)
     // http://localhost:4444/role/api/v1.0.0/find
     // http://localhost:4444/role/api/v1.0.0/find/0
     // http://localhost:4444/role/api/v1.0.0/find/1
@@ -91,6 +93,7 @@ public class RoleApiImpl implements IRoleApi<RoleDto> {
                     .build();
             return ResponseEntity.status(404).body(apiResultFind);
         }
+        log.info("Role Api bulundu");
         return ResponseEntity.ok(iRoleService.roleServiceFindById(id));
     }
 
@@ -113,6 +116,7 @@ public class RoleApiImpl implements IRoleApi<RoleDto> {
                     .build();
             return ResponseEntity.status(404).body(apiResultFind);
         }
+        log.info("Role Api Güncellendi");
         return ResponseEntity.ok(iRoleService.roleServiceUpdateById(id,roleDto));
     }
 
@@ -124,6 +128,7 @@ public class RoleApiImpl implements IRoleApi<RoleDto> {
     @DeleteMapping({"/delete","/delete/{id}"})
     public ResponseEntity<?> roleServiceDeleteById(@PathVariable(name="id",required = false) Long id) {
         RoleDto roleDto=(RoleDto)iRoleService.roleServiceDeleteById(id);
+        log.info("Role Api Silindi");
         return ResponseEntity.ok(iRoleService.roleServiceDeleteById(id));
     }
 
