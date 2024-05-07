@@ -1,6 +1,7 @@
 package com.techcareer.business.dto;
 
 import com.techcareer.annotation.AnnotationUniqueRoleName;
+import com.techcareer.audit.AuditingAwareBaseDto;
 import com.techcareer.role.ERole;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -18,9 +19,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Log4j2
 @Builder
-//@SneakyThrows
-// RoleDto
-public class RoleDto implements Serializable {
+// @SneakyThrows
+// RoleDto(M) RegisterDto(N)
+public class RoleDto extends AuditingAwareBaseDto implements Serializable {
 
     // SERILESTIRME
     public static final Long serialVersionUID=1L;
@@ -31,9 +32,9 @@ public class RoleDto implements Serializable {
     // Role Name
     // Validation
     @NotEmpty(message = "{role.name.validation.constraints.NotNull.message}")
-    @Builder.Default
     // Annotation kullanmalısın cunku database aynı role adında olmaması gerekiyor (unique)
     @AnnotationUniqueRoleName
+    @Builder.Default
     private String roleName= ERole.USER.toString();
 
     // System Created Date

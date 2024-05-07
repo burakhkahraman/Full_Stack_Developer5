@@ -1,5 +1,6 @@
 package com.techcareer.annotation;
 
+import com.techcareer.data.repository.IRegisterRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,8 @@ public class UniqueEmailAddressValidation implements ConstraintValidator<Annotat
         Boolean isEmailAddress=iRegisterRepository.findByRegisterEmail(emailAddress).isPresent();
         //Eğer email address sistemde varsa
         if(isEmailAddress){
-            return false;
+            return true;
         }
-        return true; //email sistemde yoksa
+        return false; //email sistemde yoksa
     } //end isValid
 } //end class
