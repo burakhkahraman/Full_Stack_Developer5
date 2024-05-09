@@ -16,6 +16,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
+
 // LOMBOK
 @Data // @Setter @Getter
 @AllArgsConstructor
@@ -60,6 +61,7 @@ public class RegisterDto extends AuditingAwareBaseDto implements Serializable {
     private String registerEmail;
 
     // Password
+    // Java12345@.
     @NotEmpty(message = "{register.password.validation.constraints.NotNull.message}")
     @Size(min = 7,max=15,  message = "{register.password.validation.constraints.MinMax.NotNull.message }")
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).*$", message = "{register.password.pattern.validation.constraints.NotNull.message}")
