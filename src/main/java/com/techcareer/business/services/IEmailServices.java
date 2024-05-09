@@ -11,6 +11,8 @@ package com.techcareer.business.services;
 // D => Dto
 // E => Entity
 
+import com.techcareer.business.dto.EmailDto;
+
 // Email
 public interface IEmailServices<D, E> {
 
@@ -24,6 +26,11 @@ public interface IEmailServices<D, E> {
     public D mailDatabase(D d);
 
 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //**** EMAIL DATABASE *****************************************************************//
+    // Email Database
+    EmailDto mailDatabase(EmailDto emailDto);
+
     ////////////////////////////////////////////
     // EMAIL BASIC SEND (text)
     public D basicSendEmail(D d);
@@ -31,4 +38,4 @@ public interface IEmailServices<D, E> {
     // EMAIL INTERMEDIA ATTACHMENT SEND (image,word,text,files)
     public D intermediaSendEmail(D d);
 
-}// end IRegisterService
+}// end IEmailServices
