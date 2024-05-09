@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.*;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,7 +13,7 @@ import java.util.Date;
 // LOMBOK
 @EqualsAndHashCode(callSuper = true)
 @Data
-
+@Log4j2
 @Builder
 
 // EMAIL
@@ -65,4 +66,5 @@ public class EmailEntity extends BaseEntity implements Serializable {
     // EMAIL DATE
     @Column(name = "email_date")
     private Date sentDate; //NE ZAMAN
+
 } //end class

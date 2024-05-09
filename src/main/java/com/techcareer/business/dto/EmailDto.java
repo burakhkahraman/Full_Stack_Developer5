@@ -10,6 +10,8 @@ import java.util.Date;
 // LOMBOK
 @EqualsAndHashCode(callSuper = true)
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Log4j2
 @Builder
 

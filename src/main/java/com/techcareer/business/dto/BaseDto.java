@@ -1,10 +1,7 @@
 package com.techcareer.business.dto;
 
 import com.techcareer.audit.AuditingAwareBaseDto;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,6 +10,8 @@ import java.util.Date;
 @Builder
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 
 // BaseDTO
