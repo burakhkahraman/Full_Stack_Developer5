@@ -15,7 +15,8 @@ import java.util.Date;
 @Data
 @Log4j2
 @Builder
-
+@NoArgsConstructor
+@AllArgsConstructor
 // EMAIL
 @Entity(name = "Emails") // Sql JOIN için yazdım
 @Table(name = "email")

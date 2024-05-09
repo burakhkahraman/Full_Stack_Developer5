@@ -31,6 +31,8 @@ public class EmailDto  extends BaseDto implements Serializable {
     //@Builder.Default
     private String emailFrom; //KİMDEN GELİYOR
 
+
+
     // EMAIL SUBJECT (KONU) ZORUNLU
     @NotEmpty(message = "{email.subject.validation.constraints.NotNull.message}")
     private String emailSubject; //KONU
