@@ -25,7 +25,7 @@ public class BlogCommandLineRunner2 implements CommandLineRunner {
     private final IRoleService iRoleService;
 
     private final IRegisterRepository iRegisterRepository;
-    @Qualifier("registerImpl")
+    @Qualifier("registerServicesImpl")
     private final IRegisterServices iRegisterServices;
 
     // Role ve Register Ekleme

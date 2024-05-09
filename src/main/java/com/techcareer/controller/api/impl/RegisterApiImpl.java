@@ -26,7 +26,7 @@ import java.util.List;
 public class RegisterApiImpl implements IRegisterApi<RegisterDto> {
 
     // Injection
-    @Qualifier("registerImpl")
+    @Qualifier("registerServicesImpl")
     private final IRegisterServices iRegisterServices;
 
     // Error

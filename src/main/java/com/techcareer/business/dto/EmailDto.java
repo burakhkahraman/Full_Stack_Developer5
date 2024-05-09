@@ -26,7 +26,7 @@ public class EmailDto  extends BaseDto implements Serializable {
     //private String[] emailToArray; //KİMLERE
 
     // EMAIL FROM (KİMDEN GELİYOR) ZORUNLU
-    @Value("${spring.mail.username}")
+    @Value(staticConstructor = "${spring.mail.username}")
     @NotEmpty(message = "{email.from.validation.constraints.NotNull.message}")
     //@Builder.Default
     private String emailFrom; //KİMDEN GELİYOR
