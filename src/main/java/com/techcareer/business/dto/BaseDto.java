@@ -10,8 +10,6 @@ import java.util.Date;
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 
 // BaseDTO
@@ -24,6 +22,6 @@ abstract public class BaseDto extends AuditingAwareBaseDto implements Serializab
     protected Long id;
 
     @Builder.Default
-    protected Date systemCreatedDate=new Date(System.currentTimeMillis());
+    protected  Date systemCreatedDate=new Date(System.currentTimeMillis());
 
 }

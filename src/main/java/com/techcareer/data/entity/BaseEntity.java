@@ -13,6 +13,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 // LOMBOK
+@Builder
 @Getter
 @Setter
 @ToString

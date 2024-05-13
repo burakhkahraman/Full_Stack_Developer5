@@ -11,61 +11,52 @@ import java.io.Serializable;
 import java.util.Date;
 
 // LOMBOK
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Data // @Setter @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Log4j2
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-// EMAIL
-@Entity(name = "Emails") // Sql JOIN için yazdım
+//@SneakyThrows
+// RoleDto
+
+// ENTITY
+@Entity(name = "Emails")
 @Table(name = "email")
+// Email(1) Register(1)
 public class EmailEntity extends BaseEntity implements Serializable {
 
     // SERILESTIRME
     public static final Long serialVersionUID = 1L;
 
-    // EMAIL TO ( KİME ) ZORUNLU
+    // Kime
     @Column(name = "email_to")
-    private String emailTo; //KİME
+    private String emailTo;
 
-    // EMAIL FROM (KİMDEN GELİYOR) ZORUNLU
+    // Kimden (Gönderen)
     @Column(name = "email_from")
-    //@Value("${spring.mail.username}")
-    private String emailFrom; //KİMDEN GELİYOR
+    private String emailFrom;
 
-    // EMAIL SUBJECT (KONU) ZORUNLU
+    // Konu
     @Column(name = "email_subject")
-    private String emailSubject; //KONU
+    private String emailSubject;
 
-    // EMAIL TEXT (İÇERİK)  ZORUNLU
+    // İçerik
     @Column(name = "email_text")
     private String emailText;
 
-     /*
-    CC yani Copy Carbon, göndereceğiniz e-postanın bütün alıcıların birbirini görmesini ve iletişime geçebilmesini sağlar.
-    Fakat BCC bölümüne eklediğiniz alıcıyı sizin haricinizde kimse göremez ve iletişime geçemez.
-    */
-    // EMAIL CC
-    /*
-    @Column(name="email_cc")
-    private String emailCc;// CC
+    // CC: public
+    @Column(name = "email_cc")
+    private String emailCc;
 
-    @Column(name="email_bcc")
-    private String emailBcc; //BCC
-    */
+    // BCC: private
+    @Column(name = "email_bcc")
+    private String emailBcc;
 
-    // EMAIL IMAGE
-    @Column(name = "email_image")
-    private String image = "image.png";
+    // Resim
+    @Lob //Büyük nesneler için kullandım
+    private String image="image.png";
 
-    // EMAIL URL
-    @Column(name = "email_url") //,columnDefinition = " default 'picture.jpg"
-    @Lob // Lob: Large Object
-    private String URL = "http://localhost:4444/";
-
-    // EMAIL DATE
-    @Column(name = "email_date")
-    private Date sentDate; //NE ZAMAN
-
-} //end class
+    // URL
+    @Column(name = "url")
+    private String URL="http://localhost:4444/";
+} // end class EmailEntity

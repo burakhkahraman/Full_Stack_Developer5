@@ -6,6 +6,9 @@ package com.techcareer.business.services;
  2- SMS pin code:
 */
 
+// D: Dto
+// E: Entity
+
 import java.util.List;
 
 // Register(N) Roles(M)

@@ -8,52 +8,46 @@ import java.io.Serializable;
 import java.util.Date;
 
 // LOMBOK
-@EqualsAndHashCode(callSuper = true)
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data // @Setter @Getter
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Log4j2
 @Builder
+// @SneakyThrows
+// RoleDto(M) RegisterDto(N)
 
-public class EmailDto  extends BaseDto implements Serializable {
+public class EmailDto extends BaseDto implements Serializable {
 
-    // SERİLEŞTİRME
-    public static final Long serialVersionUID = 1L;
+    // SERILESTIRME
+    public static final Long serialVersionUID=1L;
 
-    // EMAIL TO ( KİME ) ZORUNLU
+    // Kime
     @NotEmpty(message = "{email.to.validation.constraints.NotNull.message}")
-    private String emailTo; //KİME
-    //private String[] emailToArray; //KİMLERE
+    private String emailTo;
 
-    // EMAIL FROM (KİMDEN GELİYOR) ZORUNLU
-    @Value(staticConstructor = "${spring.mail.username}")
+    // Kimden (Gönderen)
     @NotEmpty(message = "{email.from.validation.constraints.NotNull.message}")
-    //@Builder.Default
-    private String emailFrom; //KİMDEN GELİYOR
+    // import org.springframework.beans.factory.annotation.Value;
+    @Value("${spring.mail.username}") // application.properties'den gelen veriyi almak
+    private String emailFrom;
 
-
-
-    // EMAIL SUBJECT (KONU) ZORUNLU
+    // Konu
     @NotEmpty(message = "{email.subject.validation.constraints.NotNull.message}")
-    private String emailSubject; //KONU
+    private String emailSubject;
 
-    // EMAIL TEXT (İÇERİK)  ZORUNLU
+    // İçerik
     @NotEmpty(message = "{email.text.validation.constraints.NotNull.message}")
     private String emailText;
 
-    /*
-    CC yani Copy Carbon, göndereceğiniz e-postanın bütün alıcıların birbirini görmesini ve iletişime geçebilmesini sağlar.
-    Fakat BCC bölümüne eklediğiniz alıcıyı sizin haricinizde kimse göremez ve iletişime geçemez.
-    */
-    // EMAIL CC
-    private String emailCc;// CC
-    private String[] emailCcArray;
+    // CC: public
+    private String emailCc;
+    //private String[] emailCcArray;
 
-    // EMAIL BCC
-    private String emailBcc; //BCC
-    private String[] emailBccArray;
+    // BCC: private
+    private String emailBcc;
+    //private String[] emailBCcArray;
 
-    // IMAGE
+    // Resim
     @Builder.Default
     private String image="image.png";
 
@@ -61,8 +55,4 @@ public class EmailDto  extends BaseDto implements Serializable {
     @Builder.Default
     private String URL="http://localhost:4444/";
 
-    // DATE(SEND)
-    @Builder.Default
-    private Date sentDate=new Date(System.currentTimeMillis()); //NE ZAMAN
-
-} //end EmailDto
+} //end Email
