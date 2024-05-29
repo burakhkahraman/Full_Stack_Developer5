@@ -7,6 +7,35 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/burakhkahraman/Full_Stack_Developer5.git)
 ![README PNG](./image/readme.png)
 
+*Version*
+---
+git -v
+java -version
+node -v
+npm -v
+
+
+
+```sh
+git checkout -b backend
+cat >> backend.txt
+backend
+Ctrl+C
+git add .
+git commit -m "backend"
+git push -u origin backend
+git checkout master 
+
+git branch frontend
+git checkout frontend veya git switch frontend
+cat >> frontend.txt
+frontend
+Ctrl+C
+git add .
+git commit -m "frontend"
+git push -u origin frontend
+git checkout master 
+
 ---
 ## Blog Project:
 Spring Boot And React JS
