@@ -13,18 +13,16 @@ import java.io.Serializable;
 import java.util.Date;
 
 // LOMBOK
-@Builder
 @Getter
 @Setter
-@ToString
 
 // abstract Class
 @MappedSuperclass
-@JsonIgnoreProperties(value = {},allowGetters = true) // Json, burada verdiğim özellikleri takip etme
-abstract public class BaseEntity  extends AuditingAwareBaseEntity implements Serializable {
+@JsonIgnoreProperties(value = {}, allowGetters = true) // Json, burada verdiğim özellikleri takip etme
+public abstract class BaseEntity extends AuditingAwareBaseEntity implements Serializable {
 
     // SERILESTIRME
-    public static final Long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     // Role ID
     @Id
@@ -33,10 +31,13 @@ abstract public class BaseEntity  extends AuditingAwareBaseEntity implements Ser
     protected Long id;
 
     // System Created Date
-    @Builder.Default
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "system_created_date")
-    protected Date systemCreatedDate=new Date(System.currentTimeMillis());
+    protected Date systemCreatedDate;
 
+    // Parametresiz kurucu
+    public BaseEntity() {
+        this.systemCreatedDate = new Date();
+    }
 } //end BaseEntity

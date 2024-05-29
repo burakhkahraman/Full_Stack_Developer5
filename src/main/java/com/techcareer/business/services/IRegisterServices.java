@@ -24,7 +24,7 @@ public interface IRegisterServices<D, E> {
     public String registerSpeedData(Long data);
 
     // USER ALL DELETE
-    public String registerAllUSerDelete();
+    public String registerAllUserDelete();
 
     ////////////////////////////////////////////
     // REGISTER CRUD

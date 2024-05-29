@@ -56,7 +56,7 @@ public class RegisterApiImpl implements IRegisterApi<RegisterDto> {
     @Override
     @GetMapping("/all/delete")
     public ResponseEntity<?> registerApiUserAllDelete() {
-        return ResponseEntity.ok(iRegisterServices.registerAllUSerDelete());
+        return ResponseEntity.ok(iRegisterServices.registerAllUserDelete());
     }
 
     /////////////////////////////////////////////////////////////

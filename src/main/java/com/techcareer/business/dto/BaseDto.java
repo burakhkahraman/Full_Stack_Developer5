@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 // LOMBOK
-@Builder
+//@Builder
 @Getter
 @Setter
 @ToString
@@ -21,7 +21,10 @@ abstract public class BaseDto extends AuditingAwareBaseDto implements Serializab
     // ID
     protected Long id;
 
-    @Builder.Default
+   // @Builder.Default
     protected  Date systemCreatedDate=new Date(System.currentTimeMillis());
 
+    public BaseDto(){
+
+    }
 }

@@ -3,6 +3,7 @@ package com.techcareer.business.dto;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.core.env.Environment;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,7 +13,7 @@ import java.util.Date;
 //@AllArgsConstructor
 //@NoArgsConstructor
 @Log4j2
-@Builder
+//@Builder
 // @SneakyThrows
 // RoleDto(M) RegisterDto(N)
 
@@ -21,15 +22,23 @@ public class EmailDto extends BaseDto implements Serializable {
     // SERILESTIRME
     public static final Long serialVersionUID=1L;
 
+    // Kimden (Gönderen)
+    @NotEmpty(message = "{email.from.validation.constraints.NotNull.message}")
+    private String emailFrom;
+
+    private final Environment env;
+
+    public EmailDto(Environment env) {
+        super(); // BaseDto sınıfının no-args yapıcı metodunu çağır
+        this.env = env;
+        this.emailFrom = env.getProperty("spring.mail.username");
+    }
+
     // Kime
     @NotEmpty(message = "{email.to.validation.constraints.NotNull.message}")
     private String emailTo;
 
-    // Kimden (Gönderen)
-    @NotEmpty(message = "{email.from.validation.constraints.NotNull.message}")
-    // import org.springframework.beans.factory.annotation.Value;
-    @Value("${spring.mail.username}") // application.properties'den gelen veriyi almak
-    private String emailFrom;
+
 
     // Konu
     @NotEmpty(message = "{email.subject.validation.constraints.NotNull.message}")
@@ -48,11 +57,11 @@ public class EmailDto extends BaseDto implements Serializable {
     //private String[] emailBCcArray;
 
     // Resim
-    @Builder.Default
+   // @Builder.Default
     private String image="image.png";
 
     // URL
-    @Builder.Default
+    //@Builder.Default
     private String URL="http://localhost:4444/";
 
 } //end Email
