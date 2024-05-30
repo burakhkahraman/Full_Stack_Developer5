@@ -1,21 +1,16 @@
-// http://localhost:4444/blog/category/api/v1/delete/all
-// proxy:    http://localhost:4444/
-// persist:  blog/category/api/v1
-// URL:      /delete/all
-
 import axios from "axios";
 
 // PERSIST
-const BLOG_CATEGORY_API_PERSIST_URL="/blog/category/api/v1"
+const BLOG_CATEGORY_API_PERSIST_URL = "/blog/category/api/v1"
 
 // BlogCategoryApi
-class BlogCategoryApi{
+class BlogCategoryApi {
 
     // SPEED DATA
     // http://localhost:4444/blog/category/api/v1/speed/10
-    //@GetMapping(value="/speed/{id}")
+    // @GetMapping(value="/speed/{id}")
     categoryApiSpeedData(data) {
-        return axios.get(BLOG_CATEGORY_API_PERSIST_URL+"/speed/10");
+        return axios.get(`${BLOG_CATEGORY_API_PERSIST_URL}/speed/10`);
     }
 
     // ALL DELETE
@@ -30,28 +25,28 @@ class BlogCategoryApi{
     // http://localhost:4444/blog/category/api/v1/create
     // @PostMapping("/create")
     categoryApiCreate(categoryDto) {
-        return axios.post(`${BLOG_CATEGORY_API_PERSIST_URL}/create`,categoryDto)
+        return axios.post(`${BLOG_CATEGORY_API_PERSIST_URL}/create`, categoryDto);
     }
 
     // LIST
     // http://localhost:4444/blog/category/api/v1/list
-    //@GetMapping(value="/list")
+    // @GetMapping(value="/list")
     categoryApiList() {
-       return axios.get(`${BLOG_CATEGORY_API_PERSIST_URL}/list`);
+        return axios.get(`${BLOG_CATEGORY_API_PERSIST_URL}/list`);
     }
 
     // FIND
     // http://localhost:4444/blog/category/api/v1/find/1
-    //@GetMapping(value="/find/{id}")
+    // @GetMapping(value="/find/{id}")
     categoryApiFindById(id) {
         return axios.get(`${BLOG_CATEGORY_API_PERSIST_URL}/find/${id}`);
     }
 
     // UPDATE
     // http://localhost:4444/blog/category/api/v1/update/1
-    //@PutMapping(value="/update/{id}")
-    categoryApiUpdate( id,categoryDto) {
-        return axios.put(`${BLOG_CATEGORY_API_PERSIST_URL}/update/${id}`,categoryDto);
+    // @PutMapping(value="/update/{id}")
+    categoryApiUpdate(id, categoryDto) {
+        return axios.put(`${BLOG_CATEGORY_API_PERSIST_URL}/update/${id}`, categoryDto);
     }
 
     // DELETE BY ID
@@ -60,7 +55,10 @@ class BlogCategoryApi{
     categoryApiDeleteById(id) {
         return axios.delete(`${BLOG_CATEGORY_API_PERSIST_URL}/delete/${id}`);
     }
-} //end class BlogCategoryApi
+} // end class BlogCategoryApi
 
-// Export Default
-export default new BlogCategoryApi();
+// Create an instance of the class
+const blogCategoryApiInstance = new BlogCategoryApi();
+
+// Export the instance as the default export
+export default blogCategoryApiInstance;
