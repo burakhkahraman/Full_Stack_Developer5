@@ -47,7 +47,7 @@ function HeaderComponent(props) {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {t('role')}
+                    {t('Role')}
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownId">
                     <Link className="dropdown-item" to="/role/list">{t('role_list')}</Link>
@@ -63,7 +63,7 @@ function HeaderComponent(props) {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {t('registers')}
+                    {t('Registers')}
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownId">
                     <Link className="dropdown-item" to="/register/list">{t('register_list')}</Link>
@@ -83,7 +83,7 @@ function HeaderComponent(props) {
                     type="submit"
                     className="btn btn-outline-success my-2 my-sm-0"
                   >
-                    {t('search')}
+                    {t('Search')}
                   </button>
                 </form>
               </ul>
@@ -102,7 +102,7 @@ function HeaderComponent(props) {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {t('language')}
+                    {t('Language')}
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownId">
                     <OtherLanguageReusability />
@@ -117,7 +117,7 @@ function HeaderComponent(props) {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {t('login')}
+                    {t('Login')}
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownId">
                     <Link className="dropdown-item" to="/login">{t('login')}</Link>
