@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 function BlogCategoryView({ t, i18n, props }) {
 
 // STATE
-const [ setId] = useState(null);
-const [blogCategoryView, setBlogCategoryView] = useState([]);
+const [id,setId]=useState(null);
+const[blogCategoryView,setBlogCategoryView]=useState([]);
 
 useEffect(()=>{
   setId(localStorage.getItem("blog_category_view_id"))
@@ -22,20 +22,24 @@ useEffect(()=>{
     }
   })
   .catch((err)=>{console.error(err);})
-}, [setId]); // setId bağımlılığı eklendi
+},[]); //end useEffect
+
 
   return (
     <div>
-      <div className="card mt-5">
-        <img className="card-img-top" src={sunRise} alt="Title" />
-        <div className="card-body">
-          <h4 className="card-title">{blogCategoryView.categoryName}</h4>
-          <p className="card-text">{blogCategoryView.systemCreatedDate}</p>
-        </div>
-      </div>
-      <Link to="/blog/category/list" className="btn btn-primary btn-sm mt-3">Blog Category</Link>
+
+<div className="card mt-5">
+  <img className="card-img-top" src={sunRise} alt="Title" />
+  <div className="card-body">
+    <h4 className="card-title">{blogCategoryView.categoryName}</h4>
+    <p className="card-text">{blogCategoryView.systemCreatedDate}</p>
+  </div>
+</div>
+<Link to="/blog/category/list" className="btn btn-primary btn-sm mt-3">Blog Category</Link>
+  
+
     </div>
   )
 }
 
-export default withTranslation()(BlogCategoryView)
+export default withTranslation()(BlogCategoryView) 

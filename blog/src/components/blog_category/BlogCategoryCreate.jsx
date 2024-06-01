@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BlogCategoryApi from '../../services/BlogCategoryApi';
 
@@ -51,7 +51,7 @@ const blogCategoryCreateSubmit= async (event)=>{
 
   try {
     const response = await BlogCategoryApi.categoryApiCreate(blogCategoryObject);
-    if(response.status===200){
+    if(response.status==200){
       setSpinner(false);
       setMultipleRequest(false);
 
